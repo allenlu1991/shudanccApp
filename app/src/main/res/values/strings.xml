@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">MONKOVEL</string>
+    <string name="app_name">书单查查</string>
 
-    <string name="umeng_key">5954b3f999f0c76d1b001600</string>
+    <string name="umeng_key">5e9c3ecd978eea083f0c7b47</string>
 
     <string name="net_error_10001">没有网络</string>
     <string name="net_error_10002">网络连接超时</string>

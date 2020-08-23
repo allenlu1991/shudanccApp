@@ -108,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="所有小说来源均来自各个网站，本APP仅提供检索服务"
+            android:text="所有小说来源均来自各个网站，本APP仅提供转载服务"
             android:textSize="12sp"
             android:textColor="#ffffff"
             android:singleLine="true"
