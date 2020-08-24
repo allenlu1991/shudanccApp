@@ -25,8 +25,8 @@ public class AppCommonBeanDao extends AbstractDao<AppCommonBean, Long> {
     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
-        public final static Property Key = new Property(1, String.class, "key", false, "KEY");
-        public final static Property Value = new Property(2, String.class, "value", false, "VALUE");
+        public final static Property AppCommonKey = new Property(1, String.class, "appCommonKey", false, "APP_COMMON_KEY");
+        public final static Property AppCommonValue = new Property(2, String.class, "appCommonValue", false, "APP_COMMON_VALUE");
     };
 
 
@@ -43,8 +43,8 @@ public class AppCommonBeanDao extends AbstractDao<AppCommonBean, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"APP_COMMON_BEAN\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
-                "\"KEY\" TEXT," + // 1: key
-                "\"VALUE\" TEXT);"); // 2: value
+                "\"APP_COMMON_KEY\" TEXT," + // 1: appCommonKey
+                "\"APP_COMMON_VALUE\" TEXT);"); // 2: appCommonValue
     }
 
     /** Drops the underlying database table. */
@@ -62,14 +62,14 @@ public class AppCommonBeanDao extends AbstractDao<AppCommonBean, Long> {
             stmt.bindLong(1, id);
         }
  
-        String key = entity.getKey();
-        if (key != null) {
-            stmt.bindString(2, key);
+        String appCommonKey = entity.getAppCommonKey();
+        if (appCommonKey != null) {
+            stmt.bindString(2, appCommonKey);
         }
  
-        String value = entity.getValue();
-        if (value != null) {
-            stmt.bindString(3, value);
+        String appCommonValue = entity.getAppCommonValue();
+        if (appCommonValue != null) {
+            stmt.bindString(3, appCommonValue);
         }
     }
 
@@ -82,14 +82,14 @@ public class AppCommonBeanDao extends AbstractDao<AppCommonBean, Long> {
             stmt.bindLong(1, id);
         }
  
-        String key = entity.getKey();
-        if (key != null) {
-            stmt.bindString(2, key);
+        String appCommonKey = entity.getAppCommonKey();
+        if (appCommonKey != null) {
+            stmt.bindString(2, appCommonKey);
         }
  
-        String value = entity.getValue();
-        if (value != null) {
-            stmt.bindString(3, value);
+        String appCommonValue = entity.getAppCommonValue();
+        if (appCommonValue != null) {
+            stmt.bindString(3, appCommonValue);
         }
     }
 
@@ -102,8 +102,8 @@ public class AppCommonBeanDao extends AbstractDao<AppCommonBean, Long> {
     public AppCommonBean readEntity(Cursor cursor, int offset) {
         AppCommonBean entity = new AppCommonBean( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // key
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2) // value
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // appCommonKey
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2) // appCommonValue
         );
         return entity;
     }
@@ -111,8 +111,8 @@ public class AppCommonBeanDao extends AbstractDao<AppCommonBean, Long> {
     @Override
     public void readEntity(Cursor cursor, AppCommonBean entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setKey(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setValue(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setAppCommonKey(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setAppCommonValue(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
      }
     
     @Override

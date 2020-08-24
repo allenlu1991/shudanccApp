@@ -16,28 +16,28 @@ public class AppCommonBean implements Parcelable, Cloneable {
     @Id(autoincrement = true)
     private Long id;
 
-    private String key; //关键key
-    private String value; //key对应的值
+    private String appCommonKey; //关键key
+    private String appCommonValue; //key对应的值
 
-    @Generated(hash = 606218941)
-    public AppCommonBean(Long id, String key, String value) {
+    @Generated(hash = 626068260)
+    public AppCommonBean(Long id, String appCommonKey, String appCommonValue) {
         this.id = id;
-        this.key = key;
-        this.value = value;
+        this.appCommonKey = appCommonKey;
+        this.appCommonValue = appCommonValue;
     }
 
     public AppCommonBean() {
     }
 
     protected AppCommonBean(Parcel in) {
-        key = in.readString();
-        value = in.readString();
+        appCommonKey = in.readString();
+        appCommonValue = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(key);
-        dest.writeString(value);
+        dest.writeString(appCommonKey);
+        dest.writeString(appCommonValue);
     }
 
     @Override
@@ -58,27 +58,27 @@ public class AppCommonBean implements Parcelable, Cloneable {
         }
     };
 
-    public String getKey() {
-        return key;
+    public String getAppCommonKey() {
+        return appCommonKey;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setAppCommonKey(String appCommonKey) {
+        this.appCommonKey = appCommonKey;
     }
 
-    public String getValue() {
-        return value;
+    public String getAppCommonValue() {
+        return appCommonValue;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setAppCommonValue(String appCommonValue) {
+        this.appCommonValue = appCommonValue;
     }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
         AppCommonBean appCommonBean = (AppCommonBean) super.clone();
-        appCommonBean.key = key;
-        appCommonBean.value = value;
+        appCommonBean.appCommonKey = appCommonKey;
+        appCommonBean.appCommonValue = appCommonValue;
         return appCommonBean;
     }
 

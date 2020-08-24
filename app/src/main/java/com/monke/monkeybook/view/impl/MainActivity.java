@@ -176,6 +176,7 @@ public class MainActivity extends MBaseActivity<IMainPresenter> implements IMain
     @Override
     protected void firstRequest() {
         mPresenter.queryBookShelf(false);
+        mPresenter.queryAppCommonData(false);
     }
 
     @Override

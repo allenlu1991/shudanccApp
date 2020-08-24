@@ -2,6 +2,8 @@
 package com.monke.monkeybook.presenter.impl;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
+
 import com.hwangjr.rxbus.RxBus;
 import com.hwangjr.rxbus.annotation.Subscribe;
 import com.hwangjr.rxbus.annotation.Tag;
@@ -9,9 +11,11 @@ import com.hwangjr.rxbus.thread.EventThread;
 import com.monke.basemvplib.IView;
 import com.monke.basemvplib.impl.BasePresenterImpl;
 import com.monke.monkeybook.base.observer.SimpleObserver;
+import com.monke.monkeybook.bean.AppCommonBean;
 import com.monke.monkeybook.bean.BookInfoBean;
 import com.monke.monkeybook.bean.BookShelfBean;
 import com.monke.monkeybook.common.RxBusTag;
+import com.monke.monkeybook.dao.AppCommonBeanDao;
 import com.monke.monkeybook.dao.BookInfoBeanDao;
 import com.monke.monkeybook.dao.BookShelfBeanDao;
 import com.monke.monkeybook.dao.ChapterListBeanDao;
@@ -26,6 +30,7 @@ import java.util.List;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -50,14 +55,16 @@ public class MainPresenterImpl extends BasePresenterImpl<IMainView> implements I
                         i--;
                     }
                 }
+                //发送1个事件
                 e.onNext(bookShelfes == null ? new ArrayList<BookShelfBean>() : bookShelfes);
             }
         })
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io()) //将发送事件切换到子线程中去执行
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SimpleObserver<List<BookShelfBean>>() {
                     @Override
                     public void onNext(List<BookShelfBean> value) {
+                        //接受事件
                         if (null != value) {
                             mView.refreshBookShelf(value);
                             if (needRefresh) {
@@ -65,6 +72,43 @@ public class MainPresenterImpl extends BasePresenterImpl<IMainView> implements I
                             } else {
                                 mView.refreshFinish();
                             }
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        mView.refreshError(NetworkUtil.getErrorTip(NetworkUtil.ERROR_CODE_ANALY));
+                    }
+                });
+    }
+
+    public void queryAppCommonData(final Boolean needRefresh) {
+        AppCommonBean appCommonBean = new AppCommonBean(null,"homeTips","close");
+        DbHelper.getInstance().getmDaoSession().getAppCommonBeanDao().insertOrReplaceInTx(appCommonBean);
+
+        Observable.create(new ObservableOnSubscribe<List<AppCommonBean>>() {
+            @Override
+            public void subscribe(ObservableEmitter<List<AppCommonBean>> e) throws Exception {
+                List<AppCommonBean> appCommonData = DbHelper.getInstance().getmDaoSession().getAppCommonBeanDao().queryBuilder().where(AppCommonBeanDao.Properties.AppCommonKey.eq("homeTips")).limit(1).build().list();
+
+                if (appCommonData != null && appCommonData.size() > 0) {
+                    AppCommonBean appCommon = appCommonData.get(0);
+                    Log.v("homeTips", appCommon.getAppCommonValue());
+                }
+
+                //发送1个事件
+                e.onNext(appCommonData == null ? new ArrayList<AppCommonBean>() : appCommonData);
+            }
+        })
+                .subscribeOn(Schedulers.io()) //将发送事件切换到子线程中去执行
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SimpleObserver<List<AppCommonBean>>() {
+                    @Override
+                    public void onNext(List<AppCommonBean> value) {
+                        //接受事件
+                        if (null != value) {
+
                         }
                     }
 
