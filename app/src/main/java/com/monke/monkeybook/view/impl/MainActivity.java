@@ -154,6 +154,7 @@ public class MainActivity extends MBaseActivity<IMainPresenter> implements IMain
         ivWarnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mPresenter.saveAppCommonData("homeTips","close");
                 flWarn.setVisibility(View.GONE);
             }
         });
@@ -236,6 +237,15 @@ public class MainActivity extends MBaseActivity<IMainPresenter> implements IMain
         } else {
             finish();
             System.exit(0);
+        }
+    }
+
+    @Override
+    public void setflWarnVisibility(String visibility) {
+        if(visibility.equals("GONE")) {
+            flWarn.setVisibility(View.GONE);
+        } else if(visibility.equals("VISIBLE")) {
+            flWarn.setVisibility(View.VISIBLE);
         }
     }
 }

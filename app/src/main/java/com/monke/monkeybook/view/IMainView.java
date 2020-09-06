@@ -1,6 +1,8 @@
 //Copyright (c) 2017. 章钦豪. All rights reserved.
 package com.monke.monkeybook.view;
 
+import android.view.View;
+
 import com.monke.basemvplib.IView;
 import com.monke.monkeybook.bean.BookShelfBean;
 
@@ -40,4 +42,10 @@ public interface IMainView extends IView{
      * @param x
      */
     void setRecyclerMaxProgress(int x);
+
+    /**
+     * 设置提示条是否显示
+     * @param visibility
+     */
+    void setflWarnVisibility(String visibility);
 }

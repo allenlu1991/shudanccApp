@@ -3,6 +3,7 @@ package com.monke.monkeybook.presenter.impl;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.view.View;
 
 import com.hwangjr.rxbus.RxBus;
 import com.hwangjr.rxbus.annotation.Subscribe;
@@ -84,18 +85,18 @@ public class MainPresenterImpl extends BasePresenterImpl<IMainView> implements I
     }
 
     public void queryAppCommonData(final Boolean needRefresh) {
-        AppCommonBean appCommonBean = new AppCommonBean(null,"homeTips","close");
-        DbHelper.getInstance().getmDaoSession().getAppCommonBeanDao().insertOrReplaceInTx(appCommonBean);
+//        AppCommonBean appCommonBean = new AppCommonBean(null,"homeTips","close");
+//        DbHelper.getInstance().getmDaoSession().getAppCommonBeanDao().insertOrReplaceInTx(appCommonBean);
 
         Observable.create(new ObservableOnSubscribe<List<AppCommonBean>>() {
             @Override
             public void subscribe(ObservableEmitter<List<AppCommonBean>> e) throws Exception {
                 List<AppCommonBean> appCommonData = DbHelper.getInstance().getmDaoSession().getAppCommonBeanDao().queryBuilder().where(AppCommonBeanDao.Properties.AppCommonKey.eq("homeTips")).limit(1).build().list();
 
-                if (appCommonData != null && appCommonData.size() > 0) {
-                    AppCommonBean appCommon = appCommonData.get(0);
-                    Log.v("homeTips", appCommon.getAppCommonValue());
-                }
+//                if (appCommonData != null && appCommonData.size() > 0) {
+//                    AppCommonBean appCommon = appCommonData.get(0);
+//                    Log.v("homeTips", appCommon.getAppCommonValue());
+//                }
 
                 //发送1个事件
                 e.onNext(appCommonData == null ? new ArrayList<AppCommonBean>() : appCommonData);
@@ -107,8 +108,16 @@ public class MainPresenterImpl extends BasePresenterImpl<IMainView> implements I
                     @Override
                     public void onNext(List<AppCommonBean> value) {
                         //接受事件
-                        if (null != value) {
-
+                        if (null != value &&  value.size() > 0) {
+                            AppCommonBean appCommon = value.get(0);
+                            String appCommonValue = appCommon.getAppCommonValue();
+                            if (appCommonValue.equals("close")) {
+                                mView.setflWarnVisibility("GONE");
+                            }else {
+                                mView.setflWarnVisibility("VISIBLE");
+                            }
+                        } else {
+                            mView.setflWarnVisibility("VISIBLE");
                         }
                     }
 
@@ -118,6 +127,11 @@ public class MainPresenterImpl extends BasePresenterImpl<IMainView> implements I
                         mView.refreshError(NetworkUtil.getErrorTip(NetworkUtil.ERROR_CODE_ANALY));
                     }
                 });
+    }
+
+    public void saveAppCommonData(String appCommonKey, String appCommonValue) {
+        AppCommonBean appCommonBean = new AppCommonBean(null,appCommonKey,appCommonValue);
+        DbHelper.getInstance().getmDaoSession().getAppCommonBeanDao().insertOrReplaceInTx(appCommonBean);
     }
 
     public void startRefreshBook(List<BookShelfBean> value){
