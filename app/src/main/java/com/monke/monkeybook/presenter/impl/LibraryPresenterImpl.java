@@ -36,7 +36,7 @@ public class LibraryPresenterImpl extends BasePresenterImpl<ILibraryView> implem
         kinds.put("灵异悬疑","https://www.ztv.la//lingyixiaoshuo/");
         kinds.put("运动竞技","https://www.ztv.la//jingjixiaoshuo/");
         kinds.put("历史架空","https://www.ztv.la//lishixiaoshuo/");
-        kinds.put("审美","https://www.ztv.la//danmeixiaoshuo/");
+        kinds.put("耽美","https://www.ztv.la//danmeixiaoshuo/");
         kinds.put("科幻迷航","https://www.ztv.la//kehuanxiaoshuo/");
         kinds.put("游戏人生","https://www.ztv.la//youxixiaoshuo/");
         kinds.put("军事斗争","https://www.ztv.la//junshixiaoshuo/");
