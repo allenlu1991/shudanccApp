@@ -88,7 +88,7 @@
                 android:src="@drawable/selector_icon_setting_main"/>
         </LinearLayout>
 
-        <com.monke.monkeybook.widget.refreshview.RefreshRecyclerView
+        <com.shudan.shudancc.widget.refreshview.RefreshRecyclerView
             android:id="@+id/rf_rv_shelf"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

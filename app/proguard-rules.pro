@@ -177,8 +177,8 @@ public static java.lang.String TABLENAME;
 -dontnote org.python.core.**
 -dontwarn com.hwangjr.rxbus.**
 
--keep class com.monke.monkeybook.widget.**{*;}
--keep class com.monke.monkeybook.bean.**{*;}
+-keep class com.shudan.shudancc.widget.**{*;}
+-keep class com.shudan.shudancc.bean.**{*;}
 -keep class android.support.**{*;}
 -keep class me.grantland.widget.**{*;}
 -keep class de.hdodenhof.circleimageview.**{*;}
@@ -194,7 +194,7 @@ public static java.lang.String TABLENAME;
 -keepclassmembers class * {
     public <init> (org.json.JSONObject);
 }
--keep public class com.monke.monkeybook.R$*{
+-keep public class com.shudan.shudancc.R$*{
     public static final int *;
 }
 -keepclassmembers enum * {

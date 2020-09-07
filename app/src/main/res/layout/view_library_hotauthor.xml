@@ -12,7 +12,7 @@
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:textSize="14sp"/>
-    <com.monke.monkeybook.widget.flowlayout.TagFlowLayout
+    <com.shudan.shudancc.widget.flowlayout.TagFlowLayout
         android:id="@+id/tfl_author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,5 +20,5 @@
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
         android:clickable="false">
-    </com.monke.monkeybook.widget.flowlayout.TagFlowLayout>
+    </com.shudan.shudancc.widget.flowlayout.TagFlowLayout>
 </LinearLayout>

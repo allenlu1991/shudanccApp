@@ -72,7 +72,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <com.monke.monkeybook.widget.checkbox.SmoothCheckBox
+        <com.shudan.shudancc.widget.checkbox.SmoothCheckBox
             android:id="@+id/scb_select"
             android:layout_width="19dp"
             android:layout_height="19dp"

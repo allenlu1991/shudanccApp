@@ -6,7 +6,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.monke.monkeybook"
+        applicationId "com.shudan.shudancc"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 16
@@ -78,6 +78,6 @@ dependencies {
 
 greendao {
     schemaVersion 1
-    daoPackage 'com.monke.monkeybook.dao'
+    daoPackage 'com.shudan.shudancc.dao'
     targetGenDir 'src/main/java'
 }

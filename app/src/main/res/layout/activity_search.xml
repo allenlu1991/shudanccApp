@@ -59,7 +59,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.monke.monkeybook.widget.refreshview.RefreshRecyclerView
+        <com.shudan.shudancc.widget.refreshview.RefreshRecyclerView
             android:id="@+id/rfRv_search_books"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -113,7 +113,7 @@
                     android:textColor="@drawable/selector_tv_black"
                     android:textSize="16sp" />
             </LinearLayout>
-            <com.monke.monkeybook.widget.flowlayout.TagFlowLayout
+            <com.shudan.shudancc.widget.flowlayout.TagFlowLayout
                 android:id="@+id/tfl_search_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:clickable="false">
-            </com.monke.monkeybook.widget.flowlayout.TagFlowLayout>
+            </com.shudan.shudancc.widget.flowlayout.TagFlowLayout>
         </LinearLayout>
         <View
             android:layout_width="match_parent"

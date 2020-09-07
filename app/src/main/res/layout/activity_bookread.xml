@@ -7,7 +7,7 @@
     android:id="@+id/fl_content"
     android:keepScreenOn="true">
 
-    <com.monke.monkeybook.widget.contentswitchview.ContentSwitchView
+    <com.shudan.shudancc.widget.contentswitchview.ContentSwitchView
         android:id="@+id/csv_book"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -249,7 +249,7 @@
         </LinearLayout>
     </FrameLayout>
 
-    <com.monke.monkeybook.widget.ChapterListView
+    <com.shudan.shudancc.widget.ChapterListView
         android:id="@+id/clp_chapterlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -38,7 +38,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.monke.monkeybook.widget.refreshview.RefreshScrollView
+        <com.shudan.shudancc.widget.refreshview.RefreshScrollView
             android:id="@+id/rscv_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -88,21 +88,21 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"/>
-                <com.monke.monkeybook.widget.libraryview.LibraryKindBookListView
+                <com.shudan.shudancc.widget.libraryview.LibraryKindBookListView
                     android:id="@+id/lkbv_kindbooklist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:paddingBottom="10dp"
                     android:background="#ffffff"/>
-                <com.monke.monkeybook.widget.libraryview.LibraryNewBooksView
+                <com.shudan.shudancc.widget.libraryview.LibraryNewBooksView
                     android:id="@+id/lav_hotauthor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#ffffff"/>
             </LinearLayout>
-        </com.monke.monkeybook.widget.refreshview.RefreshScrollView>
-        <com.monke.monkeybook.widget.refreshview.RefreshProgressBar
+        </com.shudan.shudancc.widget.refreshview.RefreshScrollView>
+        <com.shudan.shudancc.widget.refreshview.RefreshProgressBar
             android:id="@+id/rpb_progress"
             android:layout_width="match_parent"
             android:layout_height="3dp"
