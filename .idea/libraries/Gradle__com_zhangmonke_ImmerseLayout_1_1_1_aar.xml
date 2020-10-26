@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zhangmonke:ImmerseLayout:1.1.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImmerseLayout-1.1.1.aar/5cb30b35bb4f3570b19338ab487e0b2a/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImmerseLayout-1.1.1.aar/5cb30b35bb4f3570b19338ab487e0b2a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImmerseLayout-1.1.1.aar/5cb30b35bb4f3570b19338ab487e0b2a/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zhangmonke/ImmerseLayout/1.1.1/7c49f2f1b1a3f1f6bf8b3cc8cc5887e849ea83b/ImmerseLayout-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

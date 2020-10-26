@@ -11,7 +11,9 @@ android {
         targetSdkVersion 26
         versionCode 16
         versionName "1.3.6"
-        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "pugongying"]
+
+        //占位符，动态配置AndroidManifest中的内容（在AndroidManifest中使用${定义名称}）
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "guanfang"]
     }
 
     lintOptions {

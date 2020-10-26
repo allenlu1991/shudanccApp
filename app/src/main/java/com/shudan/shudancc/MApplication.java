@@ -23,6 +23,8 @@ public class MApplication extends Application {
                 ApplicationInfo appInfo = getPackageManager()
                         .getApplicationInfo(getPackageName(),
                                 PackageManager.GET_META_DATA);
+
+                // 获取AndroidManifest中<meta-data>标签的值
                 channel = appInfo.metaData.getString("UMENG_CHANNEL_VALUE");
             } catch (PackageManager.NameNotFoundException e) {
                 e.printStackTrace();
