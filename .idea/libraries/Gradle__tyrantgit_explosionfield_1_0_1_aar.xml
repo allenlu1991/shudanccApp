@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: tyrantgit:explosionfield:1.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/explosionfield-1.0.1.aar/a78773bb35cd006145fc07416b39e73c/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/explosionfield-1.0.1.aar/a78773bb35cd006145fc07416b39e73c/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/explosionfield-1.0.1.aar/a78773bb35cd006145fc07416b39e73c/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/explosionfield-1.0.1.aar/c761130aa2792ff64dc56fcbb936833e/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/explosionfield-1.0.1.aar/c761130aa2792ff64dc56fcbb936833e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/explosionfield-1.0.1.aar/c761130aa2792ff64dc56fcbb936833e/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

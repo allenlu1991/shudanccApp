@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.kyleduo.switchbutton:library:1.4.4@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.4.4.aar/20085b28a64671340b33d671d0827c3a/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.4.4.aar/20085b28a64671340b33d671d0827c3a/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.4.4.aar/20085b28a64671340b33d671d0827c3a/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.4.4.aar/7f2a7a4ce37d5a0eb8507d6223f24c0d/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.4.4.aar/7f2a7a4ce37d5a0eb8507d6223f24c0d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.4.4.aar/7f2a7a4ce37d5a0eb8507d6223f24c0d/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
